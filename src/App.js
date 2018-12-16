@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Navbar from './components/Navbar/Navbar'
 import {BrowserRouter, Route, Switch, Redirect, Link} from 'react-router-dom'
 import SignIn from './components/Auth/SignIn'
+import SignUp from './components/Auth/SignUp'
 import Dashboard from './components/Dashboard/Dashboard'
 import Footer from './components/Footer/Footer'
 import TestTaker from './components/testTaker/testTaker'
@@ -31,6 +32,7 @@ class App extends Component {
           <Switch>
                 <Route path="/admin/signin" exact component={AdminAuth}/>
                 <Route path="/signin" exact component={SignIn}/>
+                <Route path="/signup" component={SignUp}/>
                 <Redirect exact from="/" to="/signin"/>
                 <Redirect  from='/users/:id' to= '/signin'/>
                 <Redirect exact from= "/admin-account/:id" to="/admin/signin"/>
@@ -45,7 +47,7 @@ class App extends Component {
           </Switch>
          
     )
-      if(this.props.auth.uid && this.props.auth.uid!=="RXSA0cAp6Ta2NMcyWJtJJC3CQnj2"){
+      if(this.props.auth.uid && this.props.auth.uid!=="vFI7RWNR5BYsvH0mnazhsJ5dfB32"){
         routes = <Switch>
           
           <Route path={`/users/${this.props.auth.uid}`} exact component={Dashboard}/>
@@ -54,7 +56,7 @@ class App extends Component {
           <Redirect to={`/users/${this.props.auth.uid}`}/>
         </Switch>
       }
-      else if (this.props.auth.uid === 'RXSA0cAp6Ta2NMcyWJtJJC3CQnj2'){
+      else if (this.props.auth.uid === 'vFI7RWNR5BYsvH0mnazhsJ5dfB32'){
         routes = <Switch>
           {this.props.auth.uid?<Route path={`/admin-account/${this.props.auth.uid}`} exact component={AdminDashboard}/>: null}
           <Redirect from="/admin/signin" exact to={`/admin-account/${this.props.auth.uid}`}/>

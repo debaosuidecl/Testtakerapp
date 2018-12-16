@@ -17,7 +17,7 @@ class AdminDashboard extends Component {
                     <i className="material-icons blue circle">person</i>
                     <span style={{display: 'block'}} className="title">{score.Name} {score.Surname}</span>
                     <p style= {{display: 'block'}} className="grey-text">{score.Designation}</p>
-                    <Link to="/admin-account/RXSA0cAp6Ta2NMcyWJtJJC3CQnj2" className="secondary-content hide-on-small-only">
+                    <Link to="/admin-account/vFI7RWNR5BYsvH0mnazhsJ5dfB32" className="secondary-content hide-on-small-only">
                         <h6 style={{display: 'inline-block', marginRight: '30px'}}><strong>Score: {score.score}%</strong></h6>
                         <h6 style={{display: 'inline-block', fontSize: '1em', color:'#888'}}><strong>submitted {moment(score.timeSubmitted).fromNow()}</strong></h6>
                     </Link>
